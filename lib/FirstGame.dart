@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class myFirstGame extends StatefulWidget {
   const myFirstGame({Key key}) : super(key: key);
@@ -23,19 +24,77 @@ class _myFirstGameState extends State<myFirstGame> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Column(
+              children: [
+                Padding(padding: EdgeInsets.fromLTRB(10, 50, 0, 10),
+                  child: Text("Welcome to the",
+                    style: TextStyle(
+                      fontSize: 35,
 
-            Text("     Welcome to the",
-              style: TextStyle(
-                fontSize: 40,
-                color: Colors.white,
-              ),
-            ),
-            Text("          PID  game",
-              style: TextStyle(
-                fontSize: 40,
-                color: Colors.white,
-              ),
-            ),
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+
+                Padding(padding: EdgeInsets.fromLTRB(10, 10, 0, 40),
+                  child: Text("PID game",
+                    style: TextStyle(
+                      fontSize: 35,
+
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+
+
+                Padding(padding: EdgeInsets.fromLTRB(35, 0, 0, 60),
+                  child: Text("Ready to learn about the Proportional Integrative Derivative Controller?",
+                    style: TextStyle(
+                      fontStyle: FontStyle.italic,
+                      fontWeight: FontWeight.w200,
+                      fontSize: 35,
+
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                      child: GestureDetector(
+                        onTap: () {
+                          print("Click event on Container");
+                        },
+                        child: Container(
+                            width: MediaQuery.of(context).size.width/1.15,
+                            height: MediaQuery.of(context).size.height/12,
+                            color: Colors.lightBlueAccent,
+                            child: Padding(
+                              padding: EdgeInsets.fromLTRB(90, 10, 0, 0),
+                              child: Text("Oh yeah!",
+                                style: TextStyle(
+                                  fontSize: 35,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            )
+
+                        ),
+                      )
+
+                    )
+                  ],
+                )
+
+
+
+              ],
+            )
+
+
           ],
         ),
 
