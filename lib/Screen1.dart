@@ -67,7 +67,6 @@ class _myFirstGameState extends State<myFirstGame> {
                         padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
                         child: GestureDetector(
                           onTap: () {
-                            print("Click event on Container");
                             Navigator.push(
                               context,
                               MaterialPageRoute(

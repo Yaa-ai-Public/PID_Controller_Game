@@ -11,12 +11,13 @@ class screen2 extends StatefulWidget {
 class _screen2State extends State<screen2> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.amber,
-      child: Text("Hello, I am 2nd Screen",
-        style:  TextStyle(
-          fontSize: 35,
-          color: Colors.white,
+    return Scaffold(
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("images/screen1.jpg"),
+          )
+
         ),
       ),
     );
