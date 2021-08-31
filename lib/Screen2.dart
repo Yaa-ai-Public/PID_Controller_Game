@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class screen2 extends StatefulWidget {
   const screen2({Key key}) : super(key: key);
 
@@ -12,18 +11,14 @@ class _screen2State extends State<screen2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: Container(
         decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("images/screen1.jpg"),
-            fit: BoxFit.cover,
-          )
-
-        ),
+            image: DecorationImage(
+          image: AssetImage("images/screen1.jpg"),
+          fit: BoxFit.cover,
+        )),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
-
           children: [
             Column(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -32,40 +27,67 @@ class _screen2State extends State<screen2> {
                 Padding(
                   padding: EdgeInsets.fromLTRB(10, 40, 10, 0),
                   child: InkWell(
-                    child: Icon(Icons.arrow_back_ios,
+                    child: Icon(
+                      Icons.arrow_back_ios,
                       color: Colors.white,
                       size: 40,
                     ),
-                    onTap: (){
-                      Navigator.pop(context,
+                    onTap: () {
+                      Navigator.pop(
+                          context,
                           MaterialPageRoute(
                             builder: (context) => screen2(),
-                          )
-                      );
+                          ));
                     },
                   ),
                 )
-
               ],
             ),
-
-            Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Center(
-                  child: Text("For the history buff in you ...",
-                    style: TextStyle(
-                      fontSize: 35,
-                      color: Colors.white,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
+            Center(
+              child: Text(
+                "For the history buff in you ...",
+                style: TextStyle(
+                  fontSize: 35,
+                  color: Colors.white,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            Center(
+              child: Text(
+                "We will follow the footsteps of Mr. Elmer Sperry, who developed the PID controller to make one of the the first autopilot ships !",
+                style: TextStyle(
+                  fontSize: 35,
+                  color: Colors.white,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            Center(
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.purple,
+                    padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+                    textStyle: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold)),
+                onPressed: () {},
+                child: Container(
+                      width: MediaQuery.of(context).size.width / 1.15,
+                      height: MediaQuery.of(context).size.height / 13,
+                      //color: Colors.lightBlueAccent,
+                      child: Center(
+                        child: Text(
+                          "I am ready to steer",
+                          style: TextStyle(
+                            fontSize: 30,
+                            color: Colors.white,
+                        ),
+                      ),
+                    )
                 )
-
-              ],
-            )
-
+              ),
+            ),
           ],
         ),
       ),
