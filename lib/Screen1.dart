@@ -25,30 +25,34 @@ class _myFirstGameState extends State<myFirstGame> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+
             Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Padding(
-                  padding: EdgeInsets.fromLTRB(10, 50, 0, 10),
+               Center(
                   child: Text(
-                    "Welcome to the",
+                    "Welcome to the ",
                     style: TextStyle(
                       fontSize: 35,
                       color: Colors.white,
                     ),
+                    textAlign: TextAlign.center,
                   ),
+
                 ),
-                Padding(
-                  padding: EdgeInsets.fromLTRB(10, 10, 0, 40),
+                Center(
                   child: Text(
-                    "PID game",
+                    "PID game ",
                     style: TextStyle(
                       fontSize: 35,
                       color: Colors.white,
                     ),
+                    textAlign: TextAlign.center,
                   ),
+
                 ),
-                Padding(
-                  padding: EdgeInsets.fromLTRB(35, 0, 0, 60),
+
+                Center(
                   child: Text(
                     "Ready to learn about the Proportional Integrative Derivative Controller?",
                     style: TextStyle(
@@ -57,14 +61,10 @@ class _myFirstGameState extends State<myFirstGame> {
                       fontSize: 35,
                       color: Colors.white,
                     ),
+                    textAlign: TextAlign.center,
                   ),
                 ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Padding(
-                        padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                Center(
                         child: GestureDetector(
                           onTap: () {
                             Navigator.push(
@@ -77,8 +77,7 @@ class _myFirstGameState extends State<myFirstGame> {
                               width: MediaQuery.of(context).size.width / 1.15,
                               height: MediaQuery.of(context).size.height / 12,
                               color: Colors.lightBlueAccent,
-                              child: Padding(
-                                padding: EdgeInsets.fromLTRB(90, 10, 0, 0),
+                              child: Center(
                                 child: Text(
                                   "Oh yeah!",
                                   style: TextStyle(
@@ -86,13 +85,13 @@ class _myFirstGameState extends State<myFirstGame> {
                                     color: Colors.white,
                                   ),
                                 ),
+                              ),
                               )),
-                        ))
+                        )
                   ],
-                )
+                ),
               ],
-            )
-          ],
+
         ),
       ),
     );
