@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pid_controller/animatedScreen.dart';
 import 'Screen1.dart';
 
 class screen2 extends StatefulWidget {
@@ -69,7 +70,7 @@ class _screen2State extends State<screen2> {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => myFirstGame()),
+                      MaterialPageRoute(builder: (context) => screen3()),
                     );
                   },
                   child: Container(

@@ -3,14 +3,14 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'Screen2.dart';
 
-class myFirstGame extends StatefulWidget {
-  const myFirstGame({Key key}) : super(key: key);
+class screen1 extends StatefulWidget {
+  const screen1({Key key}) : super(key: key);
 
   @override
-  _myFirstGameState createState() => _myFirstGameState();
+  _screen1State createState() => _screen1State();
 }
 
-class _myFirstGameState extends State<myFirstGame> {
+class _screen1State extends State<screen1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
