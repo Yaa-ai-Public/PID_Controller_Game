@@ -25,11 +25,10 @@ class _myFirstGameState extends State<myFirstGame> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-               Center(
+                Center(
                   child: Text(
                     "Welcome to the ",
                     style: TextStyle(
@@ -38,7 +37,6 @@ class _myFirstGameState extends State<myFirstGame> {
                     ),
                     textAlign: TextAlign.center,
                   ),
-
                 ),
                 Center(
                   child: Text(
@@ -49,9 +47,7 @@ class _myFirstGameState extends State<myFirstGame> {
                     ),
                     textAlign: TextAlign.center,
                   ),
-
                 ),
-
                 Center(
                   child: Text(
                     "Ready to learn about the Proportional Integrative Derivative Controller?",
@@ -65,33 +61,31 @@ class _myFirstGameState extends State<myFirstGame> {
                   ),
                 ),
                 Center(
-                        child: GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => screen2()),
-                            );
-                          },
-                          child: Container(
-                              width: MediaQuery.of(context).size.width / 1.15,
-                              height: MediaQuery.of(context).size.height / 12,
-                              color: Colors.lightBlueAccent,
-                              child: Center(
-                                child: Text(
-                                  "Oh yeah!",
-                                  style: TextStyle(
-                                    fontSize: 35,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                              )),
-                        )
-                  ],
-                ),
+                  child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => screen2()),
+                        );
+                      },
+                      child: Container(
+                        width: MediaQuery.of(context).size.width / 1.15,
+                        height: MediaQuery.of(context).size.height / 12,
+                        color: Colors.lightBlueAccent,
+                        child: Center(
+                          child: Text(
+                            "Oh yeah!",
+                            style: TextStyle(
+                              fontSize: 35,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      )),
+                )
               ],
-
+            ),
+          ],
         ),
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'Screen1.dart';
 
 class screen2 extends StatefulWidget {
   const screen2({Key key}) : super(key: key);
@@ -64,29 +65,27 @@ class _screen2State extends State<screen2> {
               ),
             ),
             Center(
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    primary: Colors.purple,
-                    padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
-                    textStyle: TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold)),
-                onPressed: () {},
-                child: Container(
-                      width: MediaQuery.of(context).size.width / 1.15,
-                      height: MediaQuery.of(context).size.height / 13,
-                      //color: Colors.lightBlueAccent,
-                      child: Center(
-                        child: Text(
-                          "I am ready to steer",
-                          style: TextStyle(
-                            fontSize: 30,
-                            color: Colors.white,
+              child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => myFirstGame()),
+                    );
+                  },
+                  child: Container(
+                    width: MediaQuery.of(context).size.width / 1.15,
+                    height: MediaQuery.of(context).size.height / 12,
+                    color: Colors.lightBlueAccent,
+                    child: Center(
+                      child: Text(
+                        "I am ready to steer",
+                        style: TextStyle(
+                          fontSize: 35,
+                          color: Colors.white,
                         ),
                       ),
-                    )
-                )
-              ),
+                    ),
+                  )),
             ),
           ],
         ),
