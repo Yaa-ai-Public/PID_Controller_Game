@@ -14,7 +14,6 @@ class _screen3State extends State<screen3> {
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage("images/boat.gif",
-
           ),
           fit: BoxFit.cover,
         )
