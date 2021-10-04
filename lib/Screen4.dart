@@ -2,7 +2,6 @@ import 'Screen5.dart';
 import 'main.dart';
 import 'package:flutter/material.dart';
 
-
 class screen4 extends StatefulWidget {
   const screen4({Key key}) : super(key: key);
 
@@ -25,7 +24,6 @@ class _screen4State extends State<screen4> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -40,10 +38,8 @@ class _screen4State extends State<screen4> {
                     textAlign: TextAlign.center,
                   ),
                 ),
-                SizedBox(
-                  height: 30,
-                ),
                 Center(
+                  heightFactor: 3,
                   child: Text(
                     "Proportional Controller",
                     style: TextStyle(
@@ -53,43 +49,34 @@ class _screen4State extends State<screen4> {
                     textAlign: TextAlign.center,
                   ),
                 ),
-
-                SizedBox(
-                  height: 90,
-                ),
-
-        Center(
-
-              child: GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => screen5()),
-                    );
-                  },
-                  child: Container(
-                    width: MediaQuery.of(context).size.width / 1.15,
-                    height: MediaQuery.of(context).size.height / 12,
-                    color: Colors.lightBlueAccent,
-                    child: Center(
-                      child: Text(
-                        "Begin Mission",
-                        style: TextStyle(
-                          fontSize: 35,
-                          color: Colors.white,
+                Center(
+                  child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => screen5()),
+                        );
+                      },
+                      child: Container(
+                        width: MediaQuery.of(context).size.width / 1.15,
+                        height: MediaQuery.of(context).size.height / 12,
+                        color: Colors.lightBlueAccent,
+                        child: Center(
+                          child: Text(
+                            "Begin Mission",
+                            style: TextStyle(
+                              fontSize: 35,
+                              color: Colors.white,
+                            ),
+                          ),
                         ),
-                      ),
-                    ),
-                  )),
-
-                )
+                      )),
+                ),
               ],
             ),
-
           ],
-
         ),
       ),
     );
-}
+  }
 }
