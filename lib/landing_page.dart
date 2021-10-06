@@ -3,14 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'Screen2.dart';
 
-class screen1 extends StatefulWidget {
-  const screen1({Key key}) : super(key: key);
-
-  @override
-  _screen1State createState() => _screen1State();
-}
-
-class _screen1State extends State<screen1> {
+class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +24,7 @@ class _screen1State extends State<screen1> {
                 Center(
                   child: Text(
                     "Welcome to the\n"
-                    "PID Game\n"
+                    "PID Game\n\n"
                     "Ready to learn about the "
                     "Proportional Integrative Derivative Controller?",
                     style: TextStyle(
