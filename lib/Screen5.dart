@@ -50,19 +50,11 @@ class _screen5State extends State<screen5> {
     ),
 
               Center(
+
                 child: Text(
-                  "How to win ",
-                  style: TextStyle(
-                    fontSize: 35,
-                    color: Colors.white,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              Center(
-                heightFactor: 1,
-                child: Text(
-                  "The aim of the game is to steer your boat from A to B without hitting the islands",
+                  "How to win? \n\n"
+                  "The aim of the game is to steer your boat "
+                      "from A to B without hitting the islands",
                   style: TextStyle(
                     fontSize: 35,
                     color: Colors.white,

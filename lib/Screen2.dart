@@ -44,19 +44,12 @@ class _screen2State extends State<screen2> {
                 )
               ],
             ),
+
             Center(
               child: Text(
-                "For the history buff in you ...",
-                style: TextStyle(
-                  fontSize: 35,
-                  color: Colors.white,
-                ),
-                textAlign: TextAlign.center,
-              ),
-            ),
-            Center(
-              child: Text(
-                "We will follow the footsteps of Mr. Elmer Sperry, who developed the PID controller to make one of the the first autopilot ships !",
+                "For the history buff in you ...\n\n"
+                "We will follow the footsteps of Mr. Elmer Sperry,"
+                    " who developed the PID controller to make one of the the first autopilot ships !\n\n\n\n",
                 style: TextStyle(
                   fontSize: 35,
                   color: Colors.white,
