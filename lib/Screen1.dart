@@ -30,7 +30,10 @@ class _screen1State extends State<screen1> {
               children: [
                 Center(
                   child: Text(
-                    "Welcome to the ",
+                    "Welcome to the\n"
+                    "PID Game\n"
+                    "Ready to learn about the "
+                    "Proportional Integrative Derivative Controller?",
                     style: TextStyle(
                       fontSize: 35,
                       color: Colors.white,
@@ -38,28 +41,7 @@ class _screen1State extends State<screen1> {
                     textAlign: TextAlign.center,
                   ),
                 ),
-                Center(
-                  child: Text(
-                    "PID game ",
-                    style: TextStyle(
-                      fontSize: 35,
-                      color: Colors.white,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-                Center(
-                  child: Text(
-                    "Ready to learn about the Proportional Integrative Derivative Controller?",
-                    style: TextStyle(
-                      fontStyle: FontStyle.italic,
-                      fontWeight: FontWeight.w200,
-                      fontSize: 35,
-                      color: Colors.white,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
+                SizedBox(height: 16.0),
                 Center(
                   child: GestureDetector(
                       onTap: () {
