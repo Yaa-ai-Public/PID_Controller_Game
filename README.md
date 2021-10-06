@@ -1,16 +1,16 @@
 # pid_controller
 
-A new Flutter application.
+A teaching game for Proportional Integrative Derivative control systems.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+## Project Management
 
-A few resources to get you started if this is your first Flutter project:
+### Branching Strategy
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- Each feature/bugfix has a branch corresponding to JIRA ticket
+- Branch is merged to main
+- Release versions are tagged
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Git command reference for branching
+```git checkout -b PID-1```
