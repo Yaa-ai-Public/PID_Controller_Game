@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:pid_controller/animatedScreen.dart';
-import 'Screen1.dart';
 
 class screen2 extends StatefulWidget {
   const screen2({Key key}) : super(key: key);
