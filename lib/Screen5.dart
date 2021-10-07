@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:pid_controller/Screen6.dart';
 
 import 'Screen4.dart';
 
@@ -67,7 +68,7 @@ class _screen5State extends State<screen5> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => screen5()),
+                        MaterialPageRoute(builder: (context) => screen6()),
                       );
                     },
                     child: Container(
