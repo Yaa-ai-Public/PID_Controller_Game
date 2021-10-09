@@ -6,8 +6,28 @@ class screen6 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text("Hello \n I am Screen 6")
+    return Scaffold(
+      body: Container(
+
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("images/screen1.jpg"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.transparent,
+              )
+            )
+          ],
+        ),
+      ),
+
     );
   }
 }
