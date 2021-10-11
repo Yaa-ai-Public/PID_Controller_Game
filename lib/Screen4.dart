@@ -20,60 +20,58 @@ class _screen4State extends State<screen4> {
             fit: BoxFit.cover,
           ),
         ),
-        child: Row(
+        child:  Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Center(
-                  child: Text(
-                    "Level 1 ",
+                 Text(
+                    "Level 1 \n \n ""Proportional Controller\n\n\n\n\n",
                     style: TextStyle(
                       fontSize: 35,
                       color: Colors.white,
                     ),
                     textAlign: TextAlign.center,
                   ),
-                ),
-                Center(
-                  heightFactor: 3,
-                  child: Text(
-                    "Proportional Controller",
-                    style: TextStyle(
-                      fontSize: 35,
-                      color: Colors.white,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-                Center(
-                  child: GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => screen5()),
-                        );
-                      },
-                      child: Container(
-                        width: MediaQuery.of(context).size.width / 1.15,
-                        height: MediaQuery.of(context).size.height / 12,
-                        color: Colors.lightBlueAccent,
-                        child: Center(
-                          child: Text(
-                            "Begin Mission",
-                            style: TextStyle(
-                              fontSize: 35,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      )),
-                ),
+
               ],
             ),
+
+
+
+                Padding(padding: EdgeInsets.only(bottom: 50),
+                child:
+                GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => screen5()),
+                      );
+                    },
+                    child: Container(
+
+                      decoration: BoxDecoration(
+                          color: Colors.lightBlueAccent,
+                          borderRadius: BorderRadius.all(Radius.circular(20)),
+                      ),
+                      width: MediaQuery.of(context).size.width / 1.10,
+                      height: MediaQuery.of(context).size.height / 12,
+
+                      child: Center(
+                        child: Text(
+                          "Begin Mission",
+                          style: TextStyle(
+                            fontSize: 35,
+                            color: Colors.white,
+                          ),
+                        ),
+                        ),
+                      ),
+                    ),
+            )
           ],
         ),
       ),
