@@ -1,3 +1,5 @@
+import 'package:google_fonts/google_fonts.dart';
+
 import 'Screen5.dart';
 import 'main.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +22,7 @@ class _screen4State extends State<screen4> {
             fit: BoxFit.cover,
           ),
         ),
-        child:  Column(
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
@@ -28,49 +30,43 @@ class _screen4State extends State<screen4> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                 Text(
-                    "Level 1 \n \n ""Proportional Controller\n\n\n\n\n",
-                    style: TextStyle(
-                      fontSize: 35,
-                      color: Colors.white,
-                    ),
-                    textAlign: TextAlign.center,
+                Text(
+                  "Level 1 \n \n " "Proportional Controller\n\n\n\n\n",
+                  style: GoogleFonts.shadowsIntoLight(
+                    fontSize: 35,
+                    color: Colors.white,
                   ),
-
+                  textAlign: TextAlign.center,
+                )
               ],
             ),
-
-
-
-                Padding(padding: EdgeInsets.only(bottom: 50),
-                child:
-                GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => screen5()),
-                      );
-                    },
-                    child: Container(
-
-                      decoration: BoxDecoration(
-                          color: Colors.lightBlueAccent,
-                          borderRadius: BorderRadius.all(Radius.circular(20)),
-                      ),
-                      width: MediaQuery.of(context).size.width / 1.10,
-                      height: MediaQuery.of(context).size.height / 12,
-
-                      child: Center(
-                        child: Text(
-                          "Begin Mission",
-                          style: TextStyle(
-                            fontSize: 35,
-                            color: Colors.white,
-                          ),
-                        ),
-                        ),
+            Padding(
+              padding: EdgeInsets.only(bottom: 20),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => screen5()),
+                  );
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.lightBlueAccent,
+                    borderRadius: BorderRadius.all(Radius.circular(20)),
+                  ),
+                  width: MediaQuery.of(context).size.width / 1.10,
+                  height: MediaQuery.of(context).size.height / 12,
+                  child: Center(
+                    child: Text(
+                      "Begin Mission",
+                      style: TextStyle(
+                        fontSize: 35,
+                        color: Colors.white,
                       ),
                     ),
+                  ),
+                ),
+              ),
             )
           ],
         ),

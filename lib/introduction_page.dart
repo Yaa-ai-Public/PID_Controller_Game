@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:pid_controller/introduction_animation.dart';
 
 class screen2 extends StatefulWidget {
@@ -50,12 +51,12 @@ class _screen2State extends State<screen2> {
                 "For the history buff in you ...\n\n"
                 "We will follow the footsteps of Mr. Elmer Sperry,"
                     " who developed the PID controller to make one of the the first autopilot ships !\n\n\n\n",
-                style: TextStyle(
-                  fontSize: 35,
-                  color: Colors.white,
-                ),
-                textAlign: TextAlign.center,
+                style:  GoogleFonts.shadowsIntoLight(
+                fontSize: 35,
+                color: Colors.white,
               ),
+              textAlign: TextAlign.center,
+            ),
             ),
             Center(
               child: GestureDetector(
@@ -72,10 +73,12 @@ class _screen2State extends State<screen2> {
                     child: Center(
                       child: Text(
                         "I am ready to steer",
-                        style: TextStyle(
-                          fontSize: 35,
+                        style: GoogleFonts.shadowsIntoLight(
+                          fontSize: 30,
                           color: Colors.white,
                         ),
+                        textAlign: TextAlign.center,
+
                       ),
                     ),
                   )),

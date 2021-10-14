@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:pid_controller/Screen6.dart';
 
 import 'Screen4.dart';
@@ -30,61 +31,59 @@ class _screen5State extends State<screen5> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                child:
-                    GestureDetector(
-                  onTap : (){
-                    Navigator.pop(
-                        context,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context,
                         MaterialPageRoute(builder: (context) => screen4()));
                   },
-                      child:Container(
-                        child:
-                      Icon(Icons.arrow_back_ios,
+                  child: Container(
+                      child: Icon(
+                        Icons.arrow_back_ios,
                         color: Colors.white,
-
-
                       ),
-                        padding: EdgeInsets.fromLTRB(0, 0, 0, 20)
-                        ),
-
+                      padding: EdgeInsets.fromLTRB(0, 0, 0, 20)),
+                ),
               ),
-    ),
-
               Center(
-
                 child: Text(
                   "How to win? \n\n"
                   "The aim of the game is to steer your boat "
-                      "from A to B without hitting the islands",
-                  style: TextStyle(
-                    fontSize: 35,
+                  "from A to B without hitting the islands",
+                  style: GoogleFonts.shadowsIntoLight(
+                    fontSize: 45,
                     color: Colors.white,
                   ),
                   textAlign: TextAlign.center,
                 ),
               ),
-              Center(
+              Padding(
+                padding: EdgeInsets.only(bottom: 10),
                 child: GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => screen6()),
-                      );
-                    },
-                    child: Container(
-                      width: MediaQuery.of(context).size.width / 1.15,
-                      height: MediaQuery.of(context).size.height / 12,
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => screen6()),
+                    );
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
                       color: Colors.lightBlueAccent,
-                      child: Center(
-                        child: Text(
-                          "How?",
-                          style: TextStyle(
-                            fontSize: 35,
-                            color: Colors.white,
-                          ),
+                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                    ),
+                    width: MediaQuery.of(context).size.width / 1.10,
+                    height: MediaQuery.of(context).size.height / 12,
+                    child: Center(
+                      child: Text(
+                        "How ?",
+                        style: GoogleFonts.shadowsIntoLight(
+                          fontSize: 45,
+                          color: Colors.white,
                         ),
+                        textAlign: TextAlign.center,
                       ),
-                    )),
+                    ),
+                  ),
+                ),
               ),
             ],
           ),
