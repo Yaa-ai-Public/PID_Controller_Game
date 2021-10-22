@@ -15,16 +15,13 @@ class screen6 extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+        child:
             Container(
+            //  height: MediaQuery.of(context),
+              width: 300,
               decoration: BoxDecoration(
                 color: Colors.transparent,
               )
-            )
-          ],
         ),
       ),
 

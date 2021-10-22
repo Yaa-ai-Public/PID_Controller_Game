@@ -26,15 +26,15 @@ class LandingPage extends StatelessWidget {
                     "Welcome to the\n"
                     "PID Game\n\n"
                     "Ready to learn about the "
-                    "Proportional Integrative Derivative Controller?",
-                    style: TextStyle(
-                      fontSize: 35,
+                    "Proportional Integrative Derivative Controller?\n",
+                    style: GoogleFonts.shadowsIntoLight(
+                      fontSize: 45,
                       color: Colors.white,
                     ),
                     textAlign: TextAlign.center,
                   ),
                 ),
-                SizedBox(height: 16.0),
+
                 Center(
                   child: GestureDetector(
                       onTap: () {
