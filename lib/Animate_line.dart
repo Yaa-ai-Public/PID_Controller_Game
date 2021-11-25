@@ -25,7 +25,7 @@ class screen6 extends StatelessWidget {
                 Container(
                   height: MediaQuery.of(context).size.height/1.12,
                   width: MediaQuery.of(context).size.width/1.15,
-                  color: Colors.blue,
+                  color: Colors.blueAccent.withOpacity(0.8),
                 )
               ],
             ),
