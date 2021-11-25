@@ -52,6 +52,7 @@ flutter:
      - images/screen1.jpg
      - images/boat.gif
      - sounds/530703__szegvari__water-wave-beach-peoples-ships-field-recording-200815-0039.mp3
+     - sounds/219477__jarredgibb__button-04.mp3
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

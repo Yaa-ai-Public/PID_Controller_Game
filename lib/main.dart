@@ -20,6 +20,7 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
     player = AudioPlayer();
+    player.setLoopMode(LoopMode.one);
     player.setAsset('sounds/530703__szegvari__water-wave-beach-peoples-ships-field-recording-200815-0039.mp3');
     player.play();
   }
