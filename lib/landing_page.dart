@@ -1,11 +1,26 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:just_audio/just_audio.dart';
+import 'package:pid_controller/introduction_page.dart';
 
-import 'introduction_page.dart';
+class LandingPage extends StatefulWidget {
 
-class LandingPage extends StatelessWidget {
-  
+   @override
+  _LandingPageState createState() => _LandingPageState();
+}
+
+class _LandingPageState extends State<LandingPage> {
+
+  void nextPage() {
+    final player = AudioPlayer();
+    player.setAsset('sounds/219477__jarredgibb__button-04.mp3');
+    player.play();
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => screen2()),);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,14 +69,9 @@ class LandingPage extends StatelessWidget {
                                 RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10.0),
                         ))),
-                    onPressed: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => screen2()),
-                    ),
+                    onPressed: () =>  nextPage(),
                   ),
                 ),
-
-
             ]),
       ),
     );
