@@ -16,55 +16,53 @@ class LandingPage extends StatelessWidget {
           ),
         ),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Center(
-                  child: Text(
-                    "Welcome to the \n"
-                    "PID Game.\n\n"
-                    "Ready to learn about the "
-                    "Proportional Integrative Derivative Controller?\n",
-                    style: GoogleFonts.shadowsIntoLight(
-                      fontSize: 35,
-                      color: Colors.white,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-              ],
-            ),
-
-                Container(
-                  width: MediaQuery.of(context).size.width / 6.6,
-                  height: MediaQuery.of(context).size.height / 14,
-
-                  child: Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                      color: Colors.lightBlueAccent,
-                    ),
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Center(
                     child: Text(
-                      "Oh Yeah !",
+                      "Welcome to the \n"
+                      "PID Game.\n\n"
+                      "Ready to learn about the "
+                      "Proportional Integrative Derivative Controller?\n",
                       style: GoogleFonts.shadowsIntoLight(
-                        fontSize: 30,
+                        fontSize: 35,
                         color: Colors.white,
                       ),
                       textAlign: TextAlign.center,
+                    ),
+                  ),
+                ],
+              ),
+              Padding(padding: EdgeInsets.fromLTRB(20, 0, 20, 40),
+                  child: TextButton(
+                    child: Text("Oh Yeah !",
+                        style: GoogleFonts.shadowsIntoLight(fontSize: 30)),
+                    style: ButtonStyle(
+                        padding: MaterialStateProperty.all<EdgeInsets>(
+                            EdgeInsets.all(0)),
+                        foregroundColor:
+                            MaterialStateProperty.all<Color>(Colors.white),
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                            Colors.lightBlueAccent),
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15.0),
+                        ))),
+                    onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => screen2()),
+                    ),
                   ),
                 ),
-             ),
-
-            SizedBox(
-              height: MediaQuery.of(context).size.height / 20,
-            )
 
 
-                  ]),
-    ),
+            ]),
+      ),
     );
   }
 }

@@ -81,6 +81,10 @@ class _screen2State extends State<screen2> {
                     ),
                   )),
             ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height / 20,
+            )
+
           ],
         ),
       ),
