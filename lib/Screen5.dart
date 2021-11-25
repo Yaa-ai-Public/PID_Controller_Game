@@ -15,79 +15,58 @@ class screen5 extends StatefulWidget {
 class _screen5State extends State<screen5> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage("images/screen1.jpg"),
-          fit: BoxFit.cover,
+    return Scaffold(
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("images/screen1.jpg"),
+            fit: BoxFit.cover,
+          ),
         ),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
+        child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Container(
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.pop(context,
-                        MaterialPageRoute(builder: (context) => screen4()));
-                  },
-                  child: Container(
-                      child: Icon(
-                        Icons.arrow_back_ios,
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Center(
+                    child: Text(
+                      "How to win \n\n"
+                      "The aim of the game is\n to steer your boat "
+                      "from\n A to B without hitting the\n islands\n",
+                      style: GoogleFonts.shadowsIntoLight(
+                        fontSize: 35,
                         color: Colors.white,
                       ),
-                      padding: EdgeInsets.fromLTRB(0, 0, 0, 20)),
-                ),
-              ),
-              Center(
-                child: Text(
-                  "How to win? \n\n"
-                  "The aim of the game is to steer your boat "
-                  "from A to B without hitting the islands",
-                  style: GoogleFonts.shadowsIntoLight(
-                    fontSize: 45,
-                    color: Colors.white,
+                      textAlign: TextAlign.center,
+                    ),
                   ),
-                  textAlign: TextAlign.center,
-                ),
+                ],
               ),
               Padding(
-                padding: EdgeInsets.only(bottom: 10),
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => screen6()),
-                    );
-                  },
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.lightBlueAccent,
-                      borderRadius: BorderRadius.all(Radius.circular(20)),
-                    ),
-                    width: MediaQuery.of(context).size.width / 1.10,
-                    height: MediaQuery.of(context).size.height / 12,
-                    child: Center(
-                      child: Text(
-                        "How ??",
-                        style: GoogleFonts.shadowsIntoLight(
-                          fontSize: 45,
-                          color: Colors.white,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
+                padding: EdgeInsets.fromLTRB(20, 0, 20, 40),
+                child: TextButton(
+                  child: Text("Oh Yeah !",
+                      style: GoogleFonts.shadowsIntoLight(fontSize: 30)),
+                  style: ButtonStyle(
+                      padding: MaterialStateProperty.all<EdgeInsets>(
+                          EdgeInsets.all(0)),
+                      foregroundColor:
+                          MaterialStateProperty.all<Color>(Colors.white),
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                          Colors.lightBlueAccent),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ))),
+                  onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => screen6()),
                   ),
                 ),
               ),
-            ],
-          ),
-        ],
+            ]),
       ),
     );
   }
