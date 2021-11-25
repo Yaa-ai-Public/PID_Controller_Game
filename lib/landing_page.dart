@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -16,53 +17,54 @@ class LandingPage extends StatelessWidget {
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Center(
                   child: Text(
-                    "Welcome to the\n"
-                    "PID Game\n\n"
+                    "Welcome to the \n"
+                    "PID Game.\n\n"
                     "Ready to learn about the "
                     "Proportional Integrative Derivative Controller?\n",
                     style: GoogleFonts.shadowsIntoLight(
-                      fontSize: 45,
+                      fontSize: 35,
                       color: Colors.white,
                     ),
                     textAlign: TextAlign.center,
                   ),
                 ),
-
-                Center(
-                  child: GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => screen2()),
-                        );
-                      },
-                      child: Container(
-                        width: MediaQuery.of(context).size.width / 1.15,
-                        height: MediaQuery.of(context).size.height / 12,
-                        color: Colors.lightBlueAccent,
-                        child: Center(
-                          child: Text(
-                            "Oh yeah!",
-                            style: TextStyle(
-                              fontSize: 35,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      )),
-                )
               ],
             ),
-          ],
-        ),
-      ),
+
+                Container(
+                  width: MediaQuery.of(context).size.width / 6.6,
+                  height: MediaQuery.of(context).size.height / 14,
+
+                  child: Container(
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                      color: Colors.lightBlueAccent,
+                    ),
+                    child: Text(
+                      "Oh Yeah !",
+                      style: GoogleFonts.shadowsIntoLight(
+                        fontSize: 30,
+                        color: Colors.white,
+                      ),
+                      textAlign: TextAlign.center,
+                  ),
+                ),
+             ),
+
+            SizedBox(
+              height: MediaQuery.of(context).size.height / 20,
+            )
+
+
+                  ]),
+    ),
     );
   }
 }
