@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'introduction_page.dart';
 
 class LandingPage extends StatelessWidget {
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
