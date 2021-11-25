@@ -51,7 +51,7 @@ class LandingPage extends StatelessWidget {
                         shape:
                             MaterialStateProperty.all<RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15.0),
+                          borderRadius: BorderRadius.circular(10.0),
                         ))),
                     onPressed: () => Navigator.push(
                       context,

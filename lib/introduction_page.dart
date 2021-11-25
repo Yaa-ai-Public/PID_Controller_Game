@@ -21,70 +21,49 @@ class _screen2State extends State<screen2> {
         )),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Padding(
-                  padding: EdgeInsets.fromLTRB(10, 40, 10, 0),
-                  child: InkWell(
-                    child: Icon(
-                      Icons.arrow_back_ios,
+                Center(
+                  child: Text(
+                    "For the history buff in\n  you ...\n\n"
+                    "We will follow the\n"
+                    " footsteps of Mr. Elmer "
+                    "Sperry, who developed\n"
+                    " the PID controller to make one of the the first\n autopilot ships !",
+                    style: GoogleFonts.shadowsIntoLight(
+                      fontSize: 35,
                       color: Colors.white,
-                      size: 40,
                     ),
-                    onTap: () {
-                      Navigator.pop(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => screen2(),
-                          ));
-                    },
+                    textAlign: TextAlign.center,
                   ),
-                )
+                ),
               ],
             ),
-            Center(
-              child: Text(
-                "For the history buff in you ...\n\n"
-                "We will follow the footsteps of Mr. Elmer Sperry,"
-                " who developed the PID controller to make one of the the first autopilot ships !\n\n\n\n",
-                style: GoogleFonts.shadowsIntoLight(
-                  fontSize: 35,
-                  color: Colors.white,
+            Padding(
+              padding: EdgeInsets.fromLTRB(20, 40, 20, 40),
+              child: TextButton(
+                child: Text("I am ready to steer",
+                    style: GoogleFonts.shadowsIntoLight(fontSize: 30)),
+                style: ButtonStyle(
+                    padding: MaterialStateProperty.all<EdgeInsets>(
+                        EdgeInsets.all(0)),
+                    foregroundColor:
+                        MaterialStateProperty.all<Color>(Colors.white),
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                        Colors.lightBlueAccent),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ))),
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => screen3()),
                 ),
-                textAlign: TextAlign.center,
               ),
             ),
-            Center(
-              child: GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => screen3()),
-                    );
-                  },
-                  child: Container(
-                    width: MediaQuery.of(context).size.width / 1.15,
-                    height: MediaQuery.of(context).size.height / 12,
-                    color: Colors.lightBlueAccent,
-                    child: Center(
-                      child: Text(
-                        "I am ready to steer",
-                        style: GoogleFonts.shadowsIntoLight(
-                          fontSize: 30,
-                          color: Colors.white,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  )),
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height / 20,
-            )
-
           ],
         ),
       ),
