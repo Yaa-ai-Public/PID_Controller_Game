@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:just_audio/just_audio.dart';
 import 'landing_page.dart';
 
 
@@ -14,6 +14,21 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+
+  AudioPlayer player;
+  @override
+  void initState() {
+    super.initState();
+    player = AudioPlayer();
+    player.setAsset('sounds/530703__szegvari__water-wave-beach-peoples-ships-field-recording-200815-0039.mp3');
+    player.play();
+  }
+  @override
+  void dispose() {
+    player.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
