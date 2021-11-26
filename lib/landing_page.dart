@@ -24,6 +24,22 @@ class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        backgroundColor: Color(0x44000000),
+        elevation: 0,
+        title: CustomPaint(
+          painter: PageIndicatorPainter(
+            pageCount: 4,
+            dotRadius: 10,
+            dotOutlineThickness: 3,
+            spacing: 25,
+            dotFillColor: const Color(0x0F0000000),
+            dotOutlineColor: const Color(0x20000000),
+          ),
+        ),
+        foregroundColor: Colors.white,
+      ),
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
@@ -75,5 +91,43 @@ class _LandingPageState extends State<LandingPage> {
             ]),
       ),
     );
+  }
+}
+
+class PageIndicatorPainter extends CustomPainter {
+  
+  PageIndicatorPainter({
+    @required this.pageCount,
+    @required this.dotRadius,
+    @required this.dotOutlineThickness,
+    @required this.spacing,
+    @required dotFillColor,
+    @required dotOutlineColor,
+  }) :  dotFillPaint = Paint()..color = dotFillColor, 
+        dotOutlinePaint = Paint()..color = dotOutlineColor;
+  
+  final int pageCount;
+  final double dotRadius;
+  final double dotOutlineThickness;
+  final double spacing;
+  final Paint dotFillPaint;
+  final Paint dotOutlinePaint;
+
+  @override 
+  void paint(Canvas canvas, Size size) {
+    final Offset center = size.center(Offset.zero);
+    final double totalWidth = (pageCount * (2 * dotRadius)) + ((pageCount - 1) * spacing);
+    final Offset leftDotCenter = center.translate((-totalWidth / 2) + dotRadius, 0);
+
+    _drawDot(canvas, leftDotCenter);
+  }
+
+  void _drawDot(Canvas canvas, Offset dotCenter) {
+    canvas.drawCircle(dotCenter, dotRadius, dotFillPaint);
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) {
+    return true;
   }
 }
