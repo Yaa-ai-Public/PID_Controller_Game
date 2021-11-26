@@ -50,6 +50,8 @@ flutter:
   assets:
      - images/screen1.jpg
      - images/boat.gif
+     - images/redbird.png
+     - images/yellowbird.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

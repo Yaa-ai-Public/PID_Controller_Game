@@ -23,9 +23,15 @@ class screen6 extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  height: MediaQuery.of(context).size.height/1.12,
-                  width: MediaQuery.of(context).size.width/1.15,
-                  color: Colors.blueAccent.withOpacity(0.8),
+                  height: MediaQuery.of(context).size.height/1.10,
+                  width: MediaQuery.of(context).size.width/1.16,
+                  color: Colors.blue.withOpacity(0.8),
+                  child: GestureDetector(
+                    onTap:() => Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => AnimatedAlign()),
+                  ),
+                  ),
                 )
               ],
             ),
