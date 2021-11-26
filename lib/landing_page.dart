@@ -34,7 +34,7 @@ class _LandingPageState extends State<LandingPage> {
             dotRadius: 10,
             dotOutlineThickness: 3,
             spacing: 25,
-            dotFillColor: const Color(0x0F0000000),
+            dotFillColor: const Color(0x0FFFFFFF),
             dotOutlineColor: const Color(0x20000000),
           ),
         ),
@@ -123,7 +123,9 @@ class PageIndicatorPainter extends CustomPainter {
   }
 
   void _drawDot(Canvas canvas, Offset dotCenter) {
-    canvas.drawCircle(dotCenter, dotRadius, dotFillPaint);
+    canvas.drawCircle(dotCenter, dotRadius - dotOutlineThickness, dotFillPaint);
+    
+
   }
 
   @override
