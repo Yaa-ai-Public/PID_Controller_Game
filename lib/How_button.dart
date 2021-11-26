@@ -62,7 +62,7 @@ class _screen5State extends State<screen5> {
                       ))),
                   onPressed: () => Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => screen6()),
+                    MaterialPageRoute(builder: (context) => AnimateLine()),
                   ),
                 ),
               ),
