@@ -3,7 +3,7 @@ import 'package:pid_controller/How_button.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class screen6 extends StatelessWidget {
-  const screen6({Key key}) : super(key: key);
+  const screen6({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
