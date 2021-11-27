@@ -50,6 +50,8 @@ flutter:
   assets:
      - images/screen1.jpg
      - images/boat.gif
+     - images/boatShip2.png
+     - images/background.png
 
 
 

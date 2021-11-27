@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'dart:async';
 import 'package:pid_controller/introduction_animation.dart';
 
 class screen2 extends StatefulWidget {
@@ -11,6 +12,17 @@ class screen2 extends StatefulWidget {
 
 class _screen2State extends State<screen2> {
   @override
+  void initState() {
+    super.initState();
+    Timer(Duration(seconds: 3),
+            ()=>Navigator.pushReplacement(context,
+            MaterialPageRoute(builder:
+                (context) =>
+                screen3()
+            )
+        )
+    );
+  }
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(

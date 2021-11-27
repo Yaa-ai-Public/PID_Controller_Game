@@ -10,7 +10,7 @@ class AnimateLine extends StatefulWidget {
 }
 
 class _AnimateLineState extends State<AnimateLine> {
-  bool selected = false;
+  bool selected = true;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
