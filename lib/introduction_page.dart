@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:pid_controller/introduction_animation.dart';
 
 class screen2 extends StatefulWidget {
-  const screen2({Key key}) : super(key: key);
+  const screen2({Key? key}) : super(key: key);
 
   @override
   _screen2State createState() => _screen2State();
