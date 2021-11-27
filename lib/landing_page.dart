@@ -221,8 +221,17 @@ class PageIndicatorPainter extends CustomPainter {
       (center.dx - (totalWidth / 2)) 
       + (pageIndexToLeft * ((2 * dotRadius) + spacing));
     final double transitionPercent = scrollPosition - pageIndexToLeft;
-    final double indicatorLeftX = leftDotX + (transitionPercent * ((2 * dotRadius) + spacing));
-    final double indicatorRightX = indicatorLeftX + (2 * dotRadius); 
+    final double laggingLeftPositionPercent 
+      = (transitionPercent - 0.3).clamp(0.0, 1.0) / 0.7;
+
+    final double indicatorLeftX = leftDotX + (laggingLeftPositionPercent * ((2 * dotRadius) + spacing));
+
+    final double acceleratedRightPositionPercent = (transitionPercent / 0.5).clamp(0.0, 1.0);
+
+    final double indicatorRightX = 
+      leftDotX + 
+      (acceleratedRightPositionPercent * ((2 * dotRadius) + spacing)) + 
+      (2 * dotRadius); 
 
     canvas.drawRRect(RRect.fromLTRBR(
       indicatorLeftX, 
