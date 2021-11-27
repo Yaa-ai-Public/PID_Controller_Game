@@ -43,17 +43,24 @@ class _LandingPageState extends State<LandingPage> {
       appBar: AppBar(
         backgroundColor: Color(0x44000000),
         elevation: 0,
-        title: CustomPaint(
-          painter: PageIndicatorPainter(
-            pageCount: 4,
-            dotRadius: 10,
-            dotOutlineThickness: 2,
-            spacing: 25,
-            scrollPosition: 2.75,
-            dotFillColor: const Color(0x0FFFFFFF),
-            dotOutlineColor: const Color(0x20FFFFFF),
-            indicatorColor:  Colors.lightBlueAccent,
-          ),
+        title: AnimatedBuilder(
+          animation: _pageController,
+          builder: (context, snapshot) { 
+          return
+            CustomPaint(
+              painter: PageIndicatorPainter(
+                pageCount: 4,
+                dotRadius: 10,
+                dotOutlineThickness: 2,
+                spacing: 25,
+                scrollPosition: (_pageController.hasClients ? _pageController.page : 0.0)!,
+                dotFillColor: const Color(0x0FFFFFFF),
+                dotOutlineColor: const Color(0x20FFFFFF),
+                indicatorColor:  Colors.lightBlueAccent,
+              ),
+            );
+          },
+        
         ),
         foregroundColor: Colors.white,
       ),
