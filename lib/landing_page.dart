@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -15,10 +16,19 @@ class LandingPage extends StatefulWidget {
 class _LandingPageState extends State<LandingPage> {
 
   final PageController _pageController = PageController();
+  late double dotPos = 0.0;
+
+  void changePosition(Timer t) async {  // callback function
+      setState(() {
+        dotPos = dotPos + 0.1;
+        if (dotPos > 7.0) dotPos = 0.0;
+      });
+  }
 
   @override
   void initState() {
     super.initState();
+    Timer.periodic(const Duration(milliseconds: 100), changePosition);
   }
 
   @override
@@ -57,6 +67,7 @@ class _LandingPageState extends State<LandingPage> {
                 dotFillColor: const Color(0x0FFFFFFF),
                 dotOutlineColor: const Color(0x20FFFFFF),
                 indicatorColor:  Colors.lightBlueAccent,
+                animationPos: dotPos
               ),
             );
           },
@@ -185,6 +196,7 @@ class PageIndicatorPainter extends CustomPainter {
     required Color dotFillColor,
     required Color dotOutlineColor,
     required Color indicatorColor,
+    required this.animationPos,
   }) :  dotFillPaint = Paint()..color = dotFillColor, 
         dotOutlinePaint = Paint()..color = dotOutlineColor,
         indicatorPaint = Paint()..color = indicatorColor;
@@ -194,6 +206,7 @@ class PageIndicatorPainter extends CustomPainter {
   final double dotOutlineThickness;
   final double spacing;
   final double scrollPosition;
+  final double animationPos;
   final Paint dotFillPaint;
   final Paint dotOutlinePaint;
   final Paint indicatorPaint;
@@ -204,6 +217,7 @@ class PageIndicatorPainter extends CustomPainter {
     final double totalWidth = (pageCount * (2 * dotRadius)) + ((pageCount - 1) * spacing);
     _drawDots(canvas, center, totalWidth);
     _drawPageIndicator(canvas, center, totalWidth);
+    _drawDot(canvas, center.translate(((-totalWidth / 2) + dotRadius) + spacing*animationPos, 0));
   }
 
   void _drawDots(Canvas canvas, Offset center, double totalWidth) {
