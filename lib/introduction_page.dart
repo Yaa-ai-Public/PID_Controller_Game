@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pid_controller/introduction_animation.dart';
 
-class screen2 extends StatefulWidget {
-  const screen2({Key? key}) : super(key: key);
+class IntroductionPage extends StatefulWidget {
+  const IntroductionPage({Key? key}) : super(key: key);
 
   @override
-  _screen2State createState() => _screen2State();
+  _IntroductionPageState createState() => _IntroductionPageState();
 }
 
-class _screen2State extends State<screen2> {
+class _IntroductionPageState extends State<IntroductionPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +21,7 @@ class _screen2State extends State<screen2> {
         )),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          mainAxisAlignment: MainAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -32,7 +32,8 @@ class _screen2State extends State<screen2> {
                     "We will follow the\n"
                     " footsteps of Mr. Elmer "
                     "Sperry, who developed\n"
-                    " the PID controller to make one of the the first\n autopilot ships !",
+                    " the PID controller to make one of the the first\n autopilot ships !\n\n"
+                    "Swipe Left or Right for next/previous page",
                     style: GoogleFonts.shadowsIntoLight(
                       fontSize: 35,
                       color: Colors.white,
@@ -41,28 +42,6 @@ class _screen2State extends State<screen2> {
                   ),
                 ),
               ],
-            ),
-            Padding(
-              padding: EdgeInsets.fromLTRB(20, 40, 20, 40),
-              child: TextButton(
-                child: Text("I am ready to steer",
-                    style: GoogleFonts.shadowsIntoLight(fontSize: 30)),
-                style: ButtonStyle(
-                    padding: MaterialStateProperty.all<EdgeInsets>(
-                        EdgeInsets.all(0)),
-                    foregroundColor:
-                        MaterialStateProperty.all<Color>(Colors.white),
-                    backgroundColor: MaterialStateProperty.all<Color>(
-                        Colors.lightBlueAccent),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ))),
-                onPressed: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => screen3()),
-                ),
-              ),
             ),
           ],
         ),
