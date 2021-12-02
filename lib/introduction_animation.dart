@@ -15,8 +15,8 @@ class IntroductionAnimation extends StatefulWidget {
 class _IntroductionAnimationState extends State<IntroductionAnimation> {
 
   late double shipPositionTime = 0.0;
-  final List<double> shipPositionXTable = [0.35, -0.0, -0.45, 0.0, 0.25, 0.4];
-  final List<double> shipPositionYTable = [0.35, 0.30, 0.17, 0.12, 0.12];
+  final List<double> shipPositionXTable = [0.35, -0.0, -0.85, 0.0, 0.25, 0.4];
+  final List<double> shipPositionYTable = [0.35, 0.25, 0.1, 0.00, 0.00];
   late double shipPosX = shipPositionXTable[0];
   late double shipPosY = shipPositionYTable[0];
   
@@ -148,20 +148,29 @@ class IntroductionAnimationPainter extends CustomPainter {
     if (backgroundImage != null) {
       final double screenWidth = size.width;
       final double screenHeight = size.height;
-      Rect rect = Rect.fromLTWH(-2.0, 0.0, screenWidth*1.02, screenHeight*1.02);
-      paintImage(canvas: canvas, rect: rect, image: backgroundImage!);
+      canvas.save();
+      final double scaleX = size.width / backgroundImage!.width;
+      final double scaleY = size.height / backgroundImage!.height;
+      canvas.scale(scaleX, scaleY);
+      canvas.drawImage(backgroundImage!, Offset.zero, new Paint());
+      canvas.restore();
       if (shipImage != null) {
-        Offset shipOffset  = size.center(Offset.zero)
-          .translate(screenWidth*shipPositionX, screenHeight*shipPositionY);
-        Rect rectShip = shipOffset & const Size(90.0, 90.0);
-        paintImage(canvas: canvas, rect: rectShip, image: shipImage!);
+        Offset shipOffset  = size.topLeft(Offset.zero)
+          .translate(
+                screenWidth*shipPositionX + screenWidth/2, 
+                screenHeight*shipPositionY + screenHeight/2);
+        
+        canvas.drawImage(shipImage!, shipOffset, new Paint());
+        // Rect rectShip = shipOffset & Size(scaleX*200, scaleX*200);
+        // paintImage(canvas: canvas, rect: rectShip, image: shipImage!);
         if (hillImage != null) {
-          Offset hillOffset  = size.center(Offset.zero)
-          .translate(-45.0, 40.0);
-          Rect rectHill = hillOffset & const Size(260.0, 260.0);
-          paintImage(canvas: canvas, rect: rectHill, image: hillImage!);
+          canvas.save();
+          canvas.scale(scaleX, scaleY);
+          canvas.drawImage(hillImage!, Offset.zero, new Paint());
+          canvas.restore();
         }
       }
+      
     }
   }
 
