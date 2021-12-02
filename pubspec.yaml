@@ -18,10 +18,11 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   google_fonts: ^2.1.0
+  just_audio: ^0.9.18
   flutter:
     sdk: flutter
 
@@ -49,9 +50,17 @@ flutter:
 
   assets:
      - images/screen1.jpg
+
      - images/boat.gif
      - images/redbird.png
      - images/yellowbird.png
+
+     - images/intro_animation_background.png
+     - images/boat.png
+     - images/hill.png
+     - sounds/530703__szegvari__water-wave-beach-peoples-ships-field-recording-200815-0039.mp3
+     - sounds/219477__jarredgibb__button-04.mp3
+
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
