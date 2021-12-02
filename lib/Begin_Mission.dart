@@ -1,17 +1,14 @@
 import 'package:google_fonts/google_fonts.dart';
-
-import 'How_button.dart';
-import 'main.dart';
 import 'package:flutter/material.dart';
 
-class screen4 extends StatefulWidget {
-  const screen4({Key? key}) : super(key: key);
+class BeginMissionScreen extends StatefulWidget {
+  const BeginMissionScreen({Key? key}) : super(key: key);
 
   @override
-  _screen4State createState() => _screen4State();
+  _BeginMissionScreenState createState() => _BeginMissionScreenState();
 }
 
-class _screen4State extends State<screen4> {
+class _BeginMissionScreenState extends State<BeginMissionScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,12 +55,9 @@ class _screen4State extends State<screen4> {
                           RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10.0),
                       ))),
-                  onPressed: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => screen5()),
+                  onPressed: () => {},
                   ),
                 ),
-              ),
             ]),
       ),
     );
