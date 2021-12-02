@@ -32,6 +32,7 @@ class _LandingPageState extends State<LandingPage> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
+        centerTitle: true,
         backgroundColor: Color(0x44000000),
         elevation: 0,
         title: AnimatedBuilder(
