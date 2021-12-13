@@ -3,6 +3,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:pid_controller/introduction_page.dart';
 import 'package:pid_controller/introduction_animation.dart';
 import 'package:pid_controller/Begin_Mission.dart';
+import 'package:pid_controller/screen7.dart';
+
+
+import 'Animate_line.dart';
 
 class LandingPage extends StatefulWidget {
 
@@ -63,6 +67,9 @@ class _LandingPageState extends State<LandingPage> {
           IntroductionPage(),
           IntroductionAnimation(),
           BeginMissionScreen(),
+          AnimateLine(),
+
+
           ]
         ),
     );

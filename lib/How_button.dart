@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pid_controller/Animate_line.dart';
 
 class screen5 extends StatefulWidget {
   const screen5({Key? key}) : super(key: key);
@@ -58,7 +59,7 @@ class _screen5State extends State<screen5> {
                       ))),
                   onPressed: () => Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => screen6()),
+                    MaterialPageRoute(builder: (context) => AnimateLine()),
                   ),
                 ),
               ),
