@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pid_controller/screen7.dart';
-
+import 'package:path_drawing/path_drawing.dart';
 
 class AnimateLine extends StatelessWidget {
   const AnimateLine({Key? key}) : super(key: key);
@@ -23,16 +22,19 @@ class AnimateLine extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  height: MediaQuery.of(context).size.height/1.20,
-                  width: MediaQuery.of(context).size.width/1.16,
+                  height: MediaQuery.of(context).size.height / 1.20,
+                  width: MediaQuery.of(context).size.width / 1.16,
                   color: Colors.blue.withOpacity(0.6),
+                  child: CustomPaint(
+                    painter: PathPainter(),
+                  ),
                   /*child: GestureDetector(
                     onTap:() => Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => AnimatedAlignWidget()),
                   ),
                   ),*/
-                )
+                ),
               ],
             ),
           ],
@@ -40,4 +42,28 @@ class AnimateLine extends StatelessWidget {
       ),
     );
   }
+}
+
+class PathPainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    Paint paint = Paint()
+      ..color = Colors.black
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 8.0;
+
+    Path path = Path();
+    path.conicTo(
+        size.width / 1.5, 2 * size.height / 4, size.width, size.height, 30);
+
+    canvas.drawPath(
+        dashPath(
+          path,
+          dashArray: CircularIntervalList<double>(<double>[35.0, 20.5]), // Width and height of dashed line
+        ),
+        paint);
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) => true;
 }
