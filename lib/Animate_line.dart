@@ -22,9 +22,9 @@ class AnimateLine extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  height: MediaQuery.of(context).size.height / 1.20,
+                  height: MediaQuery.of(context).size.height / 1.15,
                   width: MediaQuery.of(context).size.width / 1.16,
-                  color: Colors.blue.withOpacity(0.6),
+                  color: Color(0xff119BFF).withOpacity(0.6),
                   child: CustomPaint(
                     painter: PathPainter(),
                   ),
@@ -48,9 +48,10 @@ class PathPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     Paint paint = Paint()
-      ..color = Colors.black
+      ..color = Color(0xffCA7A03)
       ..style = PaintingStyle.stroke
-      ..strokeWidth = 8.0;
+      ..strokeWidth = 10.0;
+
 
     Path path = Path();
     path.conicTo(
