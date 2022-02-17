@@ -50,19 +50,22 @@ class PathPainter extends CustomPainter {
     Paint paint = Paint()
       ..color = Color(0xffCA7A03)
       ..style = PaintingStyle.stroke
+
       ..strokeWidth = 10.0;
 
 
     Path path = Path();
-    path.conicTo(
-        size.width / 1.5, 2 * size.height / 4, size.width, size.height, 30);
+
+    path.lineTo(250, 500);
+    path.relativeLineTo(size.width/4, 50);
 
     canvas.drawPath(
         dashPath(
           path,
-          dashArray: CircularIntervalList<double>(<double>[35.0, 20.5]), // Width and height of dashed line
+          dashArray: CircularIntervalList<double>(<double>[28.0, 8.5]), // Width and height of dashed line
         ),
         paint);
+    
   }
 
   @override
