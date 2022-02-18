@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:path_drawing/path_drawing.dart';
 
+Color colorThree = Color(0xffCE7C00).withOpacity(0.8);
+
 class AnimateLine extends StatelessWidget {
   const AnimateLine({Key? key}) : super(key: key);
 
@@ -49,23 +51,42 @@ class PathPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     Paint paint = Paint()
       ..color = Color(0xffCA7A03)
-      ..style = PaintingStyle.stroke
+      ..style = PaintingStyle.fill
+
 
       ..strokeWidth = 10.0;
 
 
-    Path path = Path();
+    /*Path path = Path();
+    path.moveTo(size.width*0.83, size.height *0.24);
+    path.quadraticBezierTo(size.width/1, size.height/4.5, size.width/4.5, size.height / 1.19);
+    path.close();
 
-    path.lineTo(250, 500);
-    path.relativeLineTo(size.width/4, 50);
 
     canvas.drawPath(
+
         dashPath(
           path,
           dashArray: CircularIntervalList<double>(<double>[28.0, 8.5]), // Width and height of dashed line
         ),
+
         paint);
-    
+*/
+
+   Path path = Path();
+
+    path.moveTo(0, size.height * 0.65); // down curve
+
+    path.quadraticBezierTo(size.width / 4.2, size.height / 0.99, size.width / 2.1,
+        size.height /1.6);
+    path.quadraticBezierTo(
+        size.width / 3, size.height * 0.29, 0, size.height /1.7);//left top
+
+    paint.color = colorThree;
+    canvas.drawPath(path, paint);
+
+
+
   }
 
   @override
