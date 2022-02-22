@@ -52,8 +52,6 @@ class PathPainter extends CustomPainter {
     Paint paint = Paint()
       ..color = Color(0xffCA7A03)
       ..style = PaintingStyle.stroke
-
-
       ..strokeWidth = 10.0;
 
 
@@ -61,12 +59,20 @@ class PathPainter extends CustomPainter {
     path.moveTo(size.width*0.2, size.height*0.9);
     path.cubicTo(0, size.height*1, size.width*0.3, size.height*0.9, size.width*0.5, size.height*0.5);
     path.lineTo(size.width*0.8, size.height*0.1);
+
     canvas.drawPath(
         dashPath(
           path,
           dashArray: CircularIntervalList<double>(<double>[28.0, 8.5]), // Width and height of dashed line
         ),
         paint);
+
+    path = Path();
+    Offset circle = Offset(size.width*0.2, size.height*0.9);
+    path.close();
+    paint.color = Colors.green;
+    paint.style = PaintingStyle.fill;
+    canvas.drawCircle(circle, 40, paint);
 
 
 
