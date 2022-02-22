@@ -51,39 +51,22 @@ class PathPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     Paint paint = Paint()
       ..color = Color(0xffCA7A03)
-      ..style = PaintingStyle.fill
+      ..style = PaintingStyle.stroke
 
 
       ..strokeWidth = 10.0;
 
 
-    /*Path path = Path();
-    path.moveTo(size.width*0.83, size.height *0.24);
-    path.quadraticBezierTo(size.width/1, size.height/4.5, size.width/4.5, size.height / 1.19);
-    path.close();
-
-
+    Path path = Path();
+    path.moveTo(size.width*0.2, size.height*0.9);
+    path.cubicTo(0, size.height*1, size.width*0.3, size.height*0.9, size.width*0.5, size.height*0.5);
+    path.lineTo(size.width*0.8, size.height*0.1);
     canvas.drawPath(
-
         dashPath(
           path,
           dashArray: CircularIntervalList<double>(<double>[28.0, 8.5]), // Width and height of dashed line
         ),
-
         paint);
-*/
-
-   Path path = Path();
-
-    path.moveTo(0, size.height * 0.65); // down curve
-
-    path.quadraticBezierTo(size.width / 4.2, size.height / 0.99, size.width / 2.1,
-        size.height /1.6);
-    path.quadraticBezierTo(
-        size.width / 3, size.height * 0.29, 0, size.height /1.7);//left top
-
-    paint.color = colorThree;
-    canvas.drawPath(path, paint);
 
 
 
