@@ -74,8 +74,11 @@ class PathPainter extends CustomPainter {
     paint.style = PaintingStyle.fill;
     canvas.drawCircle(circle, 40, paint);
 
-
-
+    path = Path();
+    Offset Circle = Offset(size.width*0.8, size.height*0.1);
+    paint.color = Colors.green;
+    paint.style = PaintingStyle.fill;
+    canvas.drawCircle(Circle, 40, paint);
   }
 
   @override
