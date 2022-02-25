@@ -50,8 +50,6 @@ class AnimateLine extends StatelessWidget {
 class PathPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
-
-
     Paint paint = Paint()
       ..color = Color(0xffCA7A03)
       ..style = PaintingStyle.stroke
@@ -89,27 +87,45 @@ class PathPainter extends CustomPainter {
       40,
       paint,
     );
+
     final textspan = TextSpan(
       text: 'A',
-      style:
-      GoogleFonts.shadowsIntoLight(
-
+      style: GoogleFonts.shadowsIntoLight(
         color: Colors.white,
         fontSize: 50,
       ),
     );
     final textPainter = TextPainter(
       text: textspan,
-
       textDirection: TextDirection.rtl,
     );
     textPainter.layout(
       minWidth: 10,
       maxWidth: size.width,
     );
-    final offset = Offset(size.width*0.76, size.height*0.04);
+    final offset = Offset(size.width * 0.76, size.height * 0.04);
 
     textPainter.paint(canvas, offset);
+
+
+
+    final textspan1 = TextSpan(
+      text: 'B',
+      style: GoogleFonts.shadowsIntoLight(
+        color: Colors.white,
+        fontSize: 50,
+      ),
+    );
+    final textPainter1 = TextPainter(
+      text: textspan1,
+      textDirection: TextDirection.ltr,
+    );
+    textPainter1.layout(
+      minWidth: 10,
+      maxWidth: size.width,
+    );
+    final offset1 = Offset(size.width * 0.16, size.height/1.2);
+    textPainter1.paint(canvas, offset1);
   }
 
   @override
