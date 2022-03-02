@@ -55,12 +55,14 @@ class PathPainter extends CustomPainter {
       ..style = PaintingStyle.stroke
       ..strokeWidth = 10.0;
 
+
     //Islands drawing using path function.
     Path path = Path();
     path.moveTo(size.width * 0.2, size.height * 0.9);
     path.cubicTo(0, size.height * 1, size.width * 0.3, size.height * 0.9,
         size.width * 0.5, size.height * 0.5);
     path.lineTo(size.width * 0.8, size.height * 0.1);
+
 
     //Calling most essential component to implement drawing in screen through canvas
     canvas.drawPath(
@@ -77,6 +79,7 @@ class PathPainter extends CustomPainter {
     paint.color = Colors.green;
     paint.style = PaintingStyle.fill;
     canvas.drawCircle(circle, 40, paint);
+
 
     path = Path();
     Offset circle1 = Offset(size.width * 0.8, size.height * 0.1);
@@ -97,9 +100,7 @@ class PathPainter extends CustomPainter {
 
     paint.color = colorOne;
     canvas.drawPath(path, paint);
-
     //Drawing alphabet or text using TextSpan on canvas
-
     final textspan = TextSpan(
       text: 'A',
       style: GoogleFonts.shadowsIntoLight(
@@ -107,6 +108,7 @@ class PathPainter extends CustomPainter {
         fontSize: 50,
       ),
     );
+
     final textPainter = TextPainter(
       text: textspan,
       textDirection: TextDirection.rtl,
@@ -131,17 +133,14 @@ class PathPainter extends CustomPainter {
       text: textspan1,
       textDirection: TextDirection.ltr,
     );
-
     textPainter1.layout(
       minWidth: 05,
       maxWidth: size.width,
     );
-
     final offset1 = Offset(size.width * 0.16, size.height / 1.2);
     textPainter1.paint(canvas, offset1);
 
     // island text
-
     final textspan2 = TextSpan(
       text: 'Island',
       style: GoogleFonts.shadowsIntoLight(
@@ -156,10 +155,9 @@ class PathPainter extends CustomPainter {
     );
 
     textPainter2.layout(
-      minWidth: 05,
+      minWidth: 5,
       maxWidth: size.width,
     );
-
     final offset2 = Offset(size.width * 0.1, size.height*0.15);
     textPainter2.paint(canvas, offset2);
   }

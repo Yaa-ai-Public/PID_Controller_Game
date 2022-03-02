@@ -1,6 +1,8 @@
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 
+import 'Animate_line.dart';
+
 class BeginMissionScreen extends StatefulWidget {
   const BeginMissionScreen({Key? key}) : super(key: key);
 
@@ -55,7 +57,9 @@ class _BeginMissionScreenState extends State<BeginMissionScreen> {
                           RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10.0),
                       ))),
-                  onPressed: () => {},
+                  onPressed: () => {
+                    Navigator.push(context,MaterialPageRoute(builder: (context) => AnimateLine())),
+                  },
                   ),
                 ),
             ]),

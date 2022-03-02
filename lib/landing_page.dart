@@ -44,7 +44,7 @@ class _LandingPageState extends State<LandingPage> {
           return
             CustomPaint(
               painter: PageIndicatorPainter(
-                pageCount: 5,
+                pageCount: 4,
                 dotRadius: 10,
                 dotOutlineThickness: 2,
                 spacing: 25,
@@ -66,7 +66,7 @@ class _LandingPageState extends State<LandingPage> {
           IntroductionPage(),
           IntroductionAnimation(),
           BeginMissionScreen(),
-          AnimateLine(),
+          //AnimateLine(),
 
 
           ]
