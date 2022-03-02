@@ -28,7 +28,6 @@ class AnimateLine extends StatelessWidget {
                   height: MediaQuery.of(context).size.height / 1.15,
                   width: MediaQuery.of(context).size.width / 1.16,
                   color: Color(0xff119BFF).withOpacity(0.6),
-
                   child: CustomPaint(
                     painter: PathPainter(),
                   ),
@@ -82,7 +81,6 @@ class PathPainter extends CustomPainter {
     canvas.drawCircle(circle, 40, paint);
 
 
-
     path = Path();
     Offset circle1 = Offset(size.width * 0.8, size.height * 0.1);
     paint.color = Colors.green;
@@ -94,21 +92,14 @@ class PathPainter extends CustomPainter {
       paint,
     );
 
-
     //Drawing Island on Side
     path = Path();
-    Offset a = Offset(size.width*0.3, size.height*1);
-    Offset b = Offset(size.width*1, size.height*1);
-    path.addOval(Rect.fromPoints(a,  b));
     path.lineTo(size.width*0, size.height*0.3);
     path.moveTo(size.width*0, size.height*0.5);
     path.quadraticBezierTo(size.width*0.9, size.height*0.1, size.width*0, size.height*0.1);
 
     paint.color = colorOne;
     canvas.drawPath(path, paint);
-
-
-
     //Drawing alphabet or text using TextSpan on canvas
     final textspan = TextSpan(
       text: 'A',
